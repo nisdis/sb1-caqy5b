@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent pull-to-refresh and overscroll on mobile */
+html {
+  overscroll-behavior: none;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overscroll-behavior: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Hide scrollbars but keep functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Leaflet container */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Leaflet Routing Machine customization */
+.leaflet-routing-container {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  max-width: 300px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.leaflet-routing-alt {
+  max-height: 100vh;
+  overflow-y: auto;
+  border-bottom: none !important;
+  z-index: 10000;
+}
+
+.leaflet-routing-alt h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.leaflet-routing-alt h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.leaflet-routing-alt-minimized {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.leaflet-routing-geocoders {
+  display: none;
+}
+
+/* Custom location marker */
+.custom-location-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .leaflet-routing-container {
+    max-width: calc(100vw - 2rem);
+    margin: 0.5rem;
+  }
+
+  .leaflet-control-zoom {
+    display: none;
+  }
+}
